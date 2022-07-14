@@ -3,11 +3,12 @@ package com.augusto.ze;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public abstract class Funcionario {
+public class Funcionario {
     private String nome;
     private String documento;
     private double salario;
     private int faltas;
+    private final double MULTIPLICADOR_PLR = 3.00;
 
     Funcionario(String nome, String documento, double salario) {
         this.nome       = nome;
@@ -15,7 +16,10 @@ public abstract class Funcionario {
         this.salario    = salario;
     }
 
-    public abstract void calcularPLR();
+    public void calcularPLR() {
+        System.out.println(getNome() + " ganhou uma PLR de " + getSalario() * MULTIPLICADOR_PLR);
+    }
+
     public void calcularFerias() {
         System.out.println("Funcionário ganhou (1 + 1/3) do salário, que é: " + (1. + 1./3.)*salario);
 

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Estagiario extends Funcionario {
-
+    private final double MULTIPLICADOR_PLR = 2.00;
 
     Estagiario(String nome, String documento, double salario) {
         super(nome, documento, salario);
@@ -12,7 +12,7 @@ public class Estagiario extends Funcionario {
 
     @Override
     public void calcularPLR() {
-        System.out.println(getNome() + " é estagiário não ganha PLR!");
+        System.out.println(getNome() + " ganhou uma PLR de " + getSalario() * MULTIPLICADOR_PLR);
     }
 
     @Override
